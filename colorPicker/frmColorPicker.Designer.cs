@@ -43,17 +43,22 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtMouseColor = new System.Windows.Forms.TextBox();
             this.txtLastColor = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.spltContainer)).BeginInit();
             this.spltContainer.Panel1.SuspendLayout();
             this.spltContainer.Panel2.SuspendLayout();
             this.spltContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMain)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // spltContainer
             // 
+            this.spltContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.spltContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.spltContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.spltContainer.Location = new System.Drawing.Point(0, 0);
             this.spltContainer.Name = "spltContainer";
             // 
@@ -74,8 +79,8 @@
             this.spltContainer.Panel2.Controls.Add(this.txtFormat);
             this.spltContainer.Panel2.Controls.Add(this.label2);
             this.spltContainer.Panel2.Controls.Add(this.txtOutput);
-            this.spltContainer.Size = new System.Drawing.Size(743, 420);
-            this.spltContainer.SplitterDistance = 448;
+            this.spltContainer.Size = new System.Drawing.Size(734, 386);
+            this.spltContainer.SplitterDistance = 443;
             this.spltContainer.TabIndex = 0;
             // 
             // picMain
@@ -85,7 +90,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.picMain.Location = new System.Drawing.Point(12, 45);
             this.picMain.Name = "picMain";
-            this.picMain.Size = new System.Drawing.Size(431, 361);
+            this.picMain.Size = new System.Drawing.Size(426, 327);
             this.picMain.TabIndex = 0;
             this.picMain.TabStop = false;
             this.picMain.Click += new System.EventHandler(this.picMain_Click);
@@ -107,7 +112,7 @@
             this.txtSelectedFile.Location = new System.Drawing.Point(44, 12);
             this.txtSelectedFile.Name = "txtSelectedFile";
             this.txtSelectedFile.ReadOnly = true;
-            this.txtSelectedFile.Size = new System.Drawing.Size(364, 20);
+            this.txtSelectedFile.Size = new System.Drawing.Size(359, 20);
             this.txtSelectedFile.TabIndex = 2;
             // 
             // txtOutput
@@ -119,7 +124,7 @@
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtOutput.Size = new System.Drawing.Size(283, 283);
+            this.txtOutput.Size = new System.Drawing.Size(279, 249);
             this.txtOutput.TabIndex = 0;
             // 
             // label2
@@ -137,7 +142,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFormat.Location = new System.Drawing.Point(3, 93);
             this.txtFormat.Name = "txtFormat";
-            this.txtFormat.Size = new System.Drawing.Size(280, 20);
+            this.txtFormat.Size = new System.Drawing.Size(276, 20);
             this.txtFormat.TabIndex = 2;
             this.txtFormat.Text = "_{0} = \'{0}\', _(\'{0}\')";
             // 
@@ -145,7 +150,7 @@
             // 
             this.cmdFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdFolder.Image = global::colorPicker.Properties.Resources.folder;
-            this.cmdFolder.Location = new System.Drawing.Point(414, 7);
+            this.cmdFolder.Location = new System.Drawing.Point(409, 7);
             this.cmdFolder.Name = "cmdFolder";
             this.cmdFolder.Size = new System.Drawing.Size(29, 29);
             this.cmdFolder.TabIndex = 3;
@@ -200,13 +205,31 @@
             this.txtLastColor.Size = new System.Drawing.Size(93, 20);
             this.txtLastColor.TabIndex = 8;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 389);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(734, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(28, 17);
+            this.toolStripStatusLabel1.Text = "v0.5";
+            // 
             // frmColorPicker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 420);
+            this.ClientSize = new System.Drawing.Size(734, 411);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.spltContainer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(750, 450);
             this.Name = "frmColorPicker";
             this.Text = "Color Picker";
             this.Load += new System.EventHandler(this.frmColorPicker_Load);
@@ -217,7 +240,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.spltContainer)).EndInit();
             this.spltContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picMain)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -237,6 +263,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtLastColor;
         private System.Windows.Forms.TextBox txtMouseColor;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 
