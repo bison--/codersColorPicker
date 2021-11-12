@@ -11,6 +11,8 @@ namespace colorPicker
 {
     public partial class frmColorPicker : Form
     {
+        Bitmap img;
+
         public frmColorPicker()
         {
             InitializeComponent();
@@ -30,6 +32,7 @@ namespace colorPicker
         {
             txtSelectedFile.Text = ofdImage.FileName;
             picMain.ImageLocation = txtSelectedFile.Text;
+            img = new Bitmap(txtSelectedFile.Text);
         }
 
         private void picMain_Click(object sender, EventArgs e)
@@ -39,10 +42,17 @@ namespace colorPicker
                 return;
             }
 
-            MouseEventArgs me = (MouseEventArgs)e;
-            Point coordinates = me.Location;
-            Bitmap b = new Bitmap(picMain.Image);
-            Color color = b.GetPixel(coordinates.X, coordinates.Y);
+            MouseEventArgs mouseEvent = (MouseEventArgs)e;
+            Point coordinates = mouseEvent.Location;
+
+
+            if (coordinates.X > img.Width || coordinates.Y > img.Height)
+            {
+                return;
+            }
+
+            
+            Color color = img.GetPixel(coordinates.X, coordinates.Y);
             txtOutput.Text += String.Format(txtFormat.Text, System.Drawing.ColorTranslator.ToHtml(color)) + "\r\n";
             picLastColor.BackColor = color;
         }
@@ -59,10 +69,15 @@ namespace colorPicker
                 return;
             }
 
-            MouseEventArgs me = (MouseEventArgs)e;
-            Point coordinates = me.Location;
-            Bitmap b = new Bitmap(picMain.Image);
-            Color color = b.GetPixel(coordinates.X, coordinates.Y);
+            MouseEventArgs mouseEvent = e;
+            Point coordinates = mouseEvent.Location;
+
+            if (coordinates.X >= img.Width || coordinates.Y >= img.Height)
+            {
+                return;
+            }
+            
+            Color color = img.GetPixel(coordinates.X, coordinates.Y);
             picMouseColor.BackColor = color;
         }
     }
