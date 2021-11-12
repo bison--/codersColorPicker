@@ -53,7 +53,7 @@ namespace colorPicker
 
             
             Color color = img.GetPixel(coordinates.X, coordinates.Y);
-            txtOutput.Text += String.Format(txtFormat.Text, System.Drawing.ColorTranslator.ToHtml(color)) + "\r\n";
+            txtOutput.Text += String.Format(txtFormat.Text, System.Drawing.ColorTranslator.ToHtml(color).Replace("#", "")) + "\r\n";
             picLastColor.BackColor = color;
         }
 
