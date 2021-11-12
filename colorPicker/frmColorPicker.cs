@@ -53,8 +53,9 @@ namespace colorPicker
 
             
             Color color = img.GetPixel(coordinates.X, coordinates.Y);
-            txtOutput.Text += String.Format(txtFormat.Text, System.Drawing.ColorTranslator.ToHtml(color).Replace("#", "")) + "\r\n";
-            picLastColor.BackColor = color;
+            txtOutput.AppendText(String.Format(txtFormat.Text, System.Drawing.ColorTranslator.ToHtml(color).Replace("#", "")) + "\r\n");
+            txtLastColor.BackColor = color;
+            txtLastColor.Text = System.Drawing.ColorTranslator.ToHtml(color);
         }
 
         private void frmColorPicker_Load(object sender, EventArgs e)
@@ -78,7 +79,8 @@ namespace colorPicker
             }
             
             Color color = img.GetPixel(coordinates.X, coordinates.Y);
-            picMouseColor.BackColor = color;
+            txtMouseColor.BackColor = color;
+            txtMouseColor.Text = System.Drawing.ColorTranslator.ToHtml(color);
         }
     }
 }
